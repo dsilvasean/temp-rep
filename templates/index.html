@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<title>Search Page</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/in.css') }}">
+{% endblock %}
+
+{% block body %}
+<div id="FullScreenOverlay" class="overlay" style="display: block;">
+    <div class="overlay-content">
+      <form action="/review" method="POST">
+        <input type="text" name="content" id="content" placeholder="Search Product...">
+        <input class="submit_btn" type="submit" value="Search">
+      </form>
+    </div>
+  </div>
+
+  
+  
+  <script>
+    function openSearchHero() {
+    document.getElementById("FullScreenOverlay").style.display = "block";
+}
+
+function closeSearchHero() {
+    document.getElementById("FullScreenOverlay").style.display = "none";
+}
+
+  </script>
+  <!-- <h5 style="position:fixed;bottom:0;left: 50%;z-index:999" class=".text-muted copyright">&copy; Vivek Kumar Shriwas </h5> -->
+
+{% endblock %}
